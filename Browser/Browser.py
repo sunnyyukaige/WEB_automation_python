@@ -1,5 +1,4 @@
 from selenium import webdriver as SeleniumDriver
-from appium import webdriver as AppiumDriver
 from selenium.common.exceptions import NoAlertPresentException
 from Find import Find
 
@@ -40,9 +39,6 @@ class Browser(Find):
         elif browser_type_in_lower == "safari":
             self.__browser_type = BrowserType.SAFARI
             self.__web_driver = SeleniumDriver.Safari(**browser_args)
-        elif browser_type_in_lower == "appium":
-            self.__browser_type = BrowserType.APPIUM
-            self.__web_driver = AppiumDriver.Remote(**browser_args)
         else:
             raise Exception("The browser type [%s] is not supported." % browser_type)
 
@@ -61,12 +57,6 @@ class Browser(Find):
 
     def get_browser_type(self):
         return self.__browser_type
-
-    def before_startup(self, method):
-        self.__web_driver.start_client = method
-
-    def after_shutdown(self, method):
-        self.__web_driver.stop_client = method
 
     def start_session(self, desired_capabilities, browser_profile=None):
         self.__web_driver.start_session(desired_capabilities, browser_profile)
@@ -225,14 +215,13 @@ class Browser(Find):
     def hide_keyboard(self):
         self.__web_driver.find_element_by_xpath("//UIAButton[@name='Hide keyboard']").click()
 
-    def scroll_to(self, element):
-        pass
+    def scroll_to(self, fromlocation=0, tolocation=0 ):
+        self._web_driver.scroll(fromlocation,tolocation)
 
     def scroll_down(self):
-        pass
        #SeleniumUtils.scroll_to_direction(self._selenium_context(), "Down")
 
-       # self._web_driver().swipe(0,0,768,1184)
+        self.scroll_to(self.__web_driver.get_window_size('current'))
 
     def close_App(self):
         self._web_driver().close_app()

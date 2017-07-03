@@ -13,8 +13,9 @@ class Utils:
             function(**function_arguments)
             return True
 
-        except Exception:
-            return False
+        except Exception as e:
+            raise e
+
 
     @staticmethod
     def wait_until(function, interval=0.5, timeout=20, **function_arguments):

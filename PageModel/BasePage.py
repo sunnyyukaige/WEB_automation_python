@@ -1,7 +1,7 @@
-__author__ = 'sunny.yu2'
+__author__ = 'sunny.yu2 & sophia.lee'
 from Browser.BrowserManage import BrowserManage
 from WebElement.By import By
-from Utilitys.Utils import Utils
+from WebElement.Waitor import Waitor
 import time
 
 class BasePage():
@@ -14,7 +14,12 @@ class BasePage():
      self.browser.get_title()
 
   def Loadfinish(self):
-     time.sleep(5)
+      pass
+       #time.sleep(2)
+       #LoadFinish = self.browser.find_web_element(By.CLASS_NAME, '  pace-done')
+       #Waitor.exist(LoadFinish)
+       #time.sleep(5)
+
 
   def openUrl(self,url):
       self.browser.open(url)

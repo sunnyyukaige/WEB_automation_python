@@ -1,32 +1,32 @@
-# WEB_automation_python
-Automation framework of web page(light framework)with BDD
-# jmeter installation
-###install JDK environment
-###download jmeter latest version 
-###install tool management and install useful plugin
+# Omni automated testing
 
-#soapUI installation 
-###download latest version 
+## UI automated testing
 
-#UI automation install
-###install python https://www.python.org/downloads/release/python-351/
-###set system environment path add PATH=install folder(check with python --version)
-###install pip
-###pip install *selenium python -m pip install selenium*
-###pip install browser driver 
- -------------------------------华丽分界线------------------------------------------------------  
-**Base**
-   - action
-   - elements
-   - utility
-   - config
-   - wait
-   - assert
-   
-**Page**
-   - BasePage.js (add some hook and define some comment method and property for all other funciton page)
-   - LoginPage.js (will be many page like this provide for test cases using)  
- 
-**TestCases**
-   - BaseCase.js (define some hook method and commen method used by multiple test cases)
-   - LoginCase.js (one login case as exp)
+### Setting up the environment
+
+1. Install [pyenv](https://github.com/pyenv/pyenv).
+2. Install Python 3.6 running `pyenv install 3.6.1`.
+3. Set the newly installed Python to be used globally running `pyenv global 3.6.1`.
+4. Install Selenium running `pip install selenium`.
+5. Install the [Chrome driver](https://sites.google.com/a/chromium.org/chromedriver/downloads) for Selenium and add it to your PATH.  
+If you use macOS, you can do this via [Homebrew](https://brew.sh/) running `brew install chromedriver`.
+7. Install Behave running `pip install behave`.
+
+### Run the tests
+
+1. Go to the directory `UI automation/OMNI_UI_automation`.
+2. Run `behave -D env=qa`.
+
+## Performance testing
+
+### Setting up the environment
+
+1. Install the JDK environment.
+2. Download the latest version of JMeter.
+3. Install tool management and install useful plugins.
+
+## API testing
+
+### Setting up the environment
+
+1. Download and install the latest version of SoapUI.

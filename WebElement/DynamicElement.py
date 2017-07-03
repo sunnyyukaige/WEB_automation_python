@@ -1,5 +1,5 @@
-from ..WebElement.By import By
-from ..WebElement.Element import Element
+from WebElement.By import By
+from WebElement.Element import Element
 
 
 
@@ -32,8 +32,8 @@ class DynamicElement(Element):
         if self.identifier.lower() == "id":
             return By.ID
 
-        # if self.identifier.lower() == "class_name":
-        #     return By.CLASS_NAME
+        if self.identifier.lower() == "class_name":
+             return By.CLASS_NAME
 
         if self.identifier.lower() == "name":
             return By.NAME

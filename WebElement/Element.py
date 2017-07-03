@@ -1,4 +1,4 @@
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, NoSuchAttributeException
 from Find import Find
 from WebElement.Waitor import Waitor
 
@@ -90,5 +90,12 @@ class Element(Find):
                 self._selenium_context().clear()
             except Exception as e:
                 raise NoSuchElementException
+
+    @property
+    def getText(self):
+        try:
+            return self._selenium_context().text
+        except Exception as e:
+            return NoSuchAttributeException
 
     #TODO: We need to wrap more method here.

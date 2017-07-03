@@ -1,5 +1,3 @@
-import subprocess
-import os
 
 from Browser.Browser import Browser
 

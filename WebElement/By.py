@@ -1,5 +1,2 @@
-from appium.webdriver.common.mobileby import MobileBy
-
-
-class By(MobileBy):
+class By():
     pass
